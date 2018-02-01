@@ -22,6 +22,7 @@ TEST_CASE("Account Axioms", "[Account]")
 {
 	// arrange new customer with a zero balance and zero overdraft
 	Account a("Bloggs");
+	
 
 	SECTION("Construct an Account")
 	{
@@ -110,6 +111,14 @@ TEST_CASE("Account Axioms", "[Account]")
 		
 		// assert overdraft unchanged
 		REQUIRE(a.getOverdraft() == 10.0);
+	}
+
+	SECTION("Test overloaded operator== ")
+	{
+		// act
+		Account b("Bloggs");
+		
+		REQUIRE(a == b);
 	}
 
 }

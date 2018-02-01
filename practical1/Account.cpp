@@ -65,4 +65,3 @@ bool Account::operator==(const Account & other) const {
 		return false;
 	}
 }
-
