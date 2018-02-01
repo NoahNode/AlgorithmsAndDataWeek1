@@ -116,6 +116,7 @@
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="practical1_test.cpp" />
+    <ClCompile Include="project1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />

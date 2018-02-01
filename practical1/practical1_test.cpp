@@ -6,7 +6,9 @@
 */
 
 // Use this definition to have catch provide a main method
-#define CATCH_CONFIG_MAIN
+
+//#define CATCH_CONFIG_MAIN
+#define CATCH_CONFIG_RUNNER
 
 // Use this definition when providing your own main method
 //#define CATCH_CONFIG_RUNNER
