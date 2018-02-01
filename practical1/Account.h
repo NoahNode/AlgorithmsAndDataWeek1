@@ -19,9 +19,11 @@ public:
 	float getBalance() const;
 	std::string getCustomer() const;
 	void setCustomer(std::string c);
-	float getOverdraft();
+	float getOverdraft() const;
 	void setOverdraft(float over);
-	std::string toString();
+	std::string toString() const;
+	bool operator==(const Account & other) const;
+
 private:
 	std::string customer;
 	float balance;

@@ -29,14 +29,16 @@ float Account::getBalance() const {
 };
 
 // PostCondition: overdtaft amount is returned
-float Account::getOverdraft() {
+float Account::getOverdraft() const{
 	return overdraft;
 };
 
 // PreCondition: over is a positive non-zero value
 // PostCondition: overdtaft amount is changed
 void Account::setOverdraft(float over) {
-	overdraft = over;
+	if (over >= 0 && balance + over >= 0) {
+			overdraft = over;
+	}
 };
 
 // PostCondition: customer name is returned
@@ -50,7 +52,17 @@ void Account::setCustomer(std::string cust) {
 };
 
 // PostCondition: returns string representation of account
-std::string Account::toString() {
-	return "Customer: " + customer + " Balance: " + std::to_string(balance++) +
+std::string Account::toString() const{
+	return "Customer: " + customer + " Balance: " + std::to_string(balance) +
 		" Overdraft: " + std::to_string(overdraft);
 }
+
+bool Account::operator==(const Account & other) const {
+	if (getCustomer() == other.getCustomer() && getBalance() == other.getBalance() && getOverdraft() == other.getOverdraft()) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
